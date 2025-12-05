@@ -1,0 +1,28 @@
+:root{--bg:#111;--panel:#fff;--accent:#3b82f6}
+html,body,#root{height:100%;margin:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#111}
+.app{height:100vh;display:flex;align-items:stretch;justify-content:center}
+.canvas{position:relative;width:100%;height:100vh;overflow:hidden;background:#222;display:flex;align-items:center;justify-content:center}
+.calendar{position:relative;width:1024px;height:768px;background:#fafafa;box-shadow:0 6px 30px rgba(0,0,0,.45);overflow:hidden;border-radius:8px;contain:paint}
+.calendar{perspective:1400px}
+.calendar.fullscreen{width:100vw;height:100vh;box-shadow:none;border-radius:0;background-size:cover}
+.door{position:absolute;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;cursor:pointer;user-select:none}
+.door.locked{filter:grayscale(.2);cursor:not-allowed}
+.door-panel{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:transparent;transform-origin:center center;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.9,.2,1)}
+.door-front{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;width:100%;height:100%}
+.door-back{position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:white;color:#111;font-size:14px;padding:10px;text-align:center;word-wrap:break-word;transform:rotateY(180deg);backface-visibility:hidden;overflow:auto;box-sizing:border-box}
+
+.door-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;z-index:1000}
+.door-modal{background:#fff;padding:20px;border-radius:10px;max-width:90%;max-height:90%;overflow:auto;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.door-modal .close{position:absolute;right:12px;top:8px;border:none;background:none;font-size:18px}
+.door-overlay{position:absolute;inset:0;pointer-events:none;box-sizing:border-box}
+.sidebar{position:fixed;right:0;top:0;height:100vh;width:360px;background:rgba(255,255,255,0.96);padding:12px 10px;box-shadow:-8px 0 24px rgba(0,0,0,.12);overflow:auto;transition:width 0.3s ease}
+.sidebar.collapsed{width:50px;overflow:hidden}
+.sidebar-toggle{position:absolute;left:8px;top:10px;background:transparent;border:none;font-size:18px;cursor:pointer;padding:4px 6px;color:#111;z-index:10}
+.toolbar-floating{position:fixed;right:12px;top:12px;background:rgba(255,255,255,0.95);padding:10px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.panel{padding:8px}
+.controls label{display:block;font-size:12px;margin-top:6px}
+.input{width:200px}
+.door-handle{position:absolute;width:10px;height:10px;background:#fff;border-radius:2px}
+.hidden{display:none}
+.big-input{width:360px}
